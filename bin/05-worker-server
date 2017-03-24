@@ -2,9 +2,9 @@
 
 var HappnerCluster = require('happner-cluster');
 var seq = __filename.split('/').pop().split('-').shift();
-var dataServerConfig = require('../lib/data-server-config');
+var workerServerConfig = require('../lib/worker-server-config');
 
-HappnerCluster.create(dataServerConfig.generate(seq))
+HappnerCluster.create(workerServerConfig.generate(seq))
 
   .catch(function (error) {
 
