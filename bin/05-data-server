@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var HappnerCluster = require('happner-cluster');
+var seq = __filename.split('/').pop().split('-').shift();
+var dataServerConfig = require('../lib/data-server-config');
+
+HappnerCluster.create(dataServerConfig.generate(seq))
+
+  .catch(function (error) {
+
+    console.error(error);
+    process.exit(1);
+
+  });

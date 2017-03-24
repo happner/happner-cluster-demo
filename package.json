@@ -1,0 +1,23 @@
+{
+  "name": "happner-cluster-demo",
+  "version": "1.0.0",
+  "description": "Happner cluster demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happner/happner-cluster-demo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/happner/happner-cluster-demo/issues"
+  },
+  "homepage": "https://github.com/happner/happner-cluster-demo#readme",
+  "dependencies": {
+    "happn-service-mongo-2": "^1.0.1",
+    "happner-cluster": "^1.2.3"
+  }
+}
