@@ -18,9 +18,10 @@
   "homepage": "https://github.com/happner/happner-cluster-demo#readme",
   "dependencies": {
     "happn-service-mongo-2": "^1.0.1",
-    "happner-cluster": "^1.2.3",
-    "happner-cluster-ui": "happner/happner-cluster-ui",
+    "happner-client": "^1.2.0",
+    "happner-cluster": "^1.3.0",
     "happner-cluster-info": "happner/happner-cluster-info",
+    "happner-cluster-ui": "happner/happner-cluster-ui",
     "happner-cluster-worker": "happner/happner-cluster-worker#1.0.0"
   }
 }

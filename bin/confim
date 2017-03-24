@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+var HappnerClient = require('happner-client');
+
+var client = new HappnerClient();
+var api;
+
+client.connect()
+
+  .then(function () {
+
+    var model = {
+      'happner-cluster-ui': {
+        version: '^1.0.0',
+        methods: {
+          job: {}
+        }
+      }
+    };
+
+    api = client.construct(model);
+
+  })
+
+  .then(function () {
+
+    console.log(api);
+
+    setInterval(function () {
+
+      api.exchange['happner-cluster-ui'].job(function (e, result) {
+
+        if (e) {
+          return console.log('JOB ERROR:', e.toString());
+        }
+
+        console.log('JOB RESULT:', result);
+
+      });
+
+    }, 1000);
+
+  })
+
+  .catch(function (error) {
+
+    console.error(error);
+    process.exit(1);
+
+  });
