@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 
 var HappnerClient = require('happner-client');
-
 var client = new HappnerClient();
-var api;
 
-client.connect()
+client.connect(null, {username: '_ADMIN', password: 'happnerclusterdemo'})
 
   .then(function () {
 
@@ -18,13 +16,17 @@ client.connect()
       }
     };
 
-    api = client.construct(model);
+    return client.construct(model);
 
   })
 
-  .then(function () {
+  .then(function (api) {
 
-    console.log(api);
+    // console.log(api);
+
+    api.event['happner-cluster-ui'].on('cluster/info', function (data) {
+      console.log(data);
+    });
 
     setInterval(function () {
 
